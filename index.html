@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0E0F13;--card:#171921;--line:#2a2d38;--text:#F4F1EC;--mute:#a4a8b4;--p:#E11D2E;--s:#FF4D5A;--on:#0E0F13;
+:root{--bg:#0E0F13;--card:#171921;--line:#2a2d38;--text:#F4F1EC;--mute:#a4a8b4;--p:#FF0000;--s:#FF0000;--on:#0E0F13;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
 @media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#FAF7F2;--card:#fff;--line:#e5dfd5;--text:#17181d;--mute:#5d616d;--on:#fff;color-scheme:light}}
 :root[data-theme="light"]{--bg:#FAF7F2;--card:#fff;--line:#e5dfd5;--text:#17181d;--mute:#5d616d;--on:#fff;color-scheme:light}
@@ -29,8 +29,8 @@ nav{display:flex;align-items:center;justify-content:space-between;height:68px}
 .logo span{color:var(--p)}
 .links{display:flex;gap:24px;align-items:center;font-size:.92rem;color:var(--mute)}
 .links a:hover{color:var(--text)}
-.btn{display:inline-block;background:linear-gradient(135deg,var(--p),var(--s));color:#fff;font-weight:600;padding:12px 22px;border-radius:999px;border:0;cursor:pointer;font-size:.95rem;transition:.25s;box-shadow:0 0 0 rgba(225,29,46,0)}
-.btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(225,29,46,.4)}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--p),var(--s));color:#fff;font-weight:600;padding:12px 22px;border-radius:999px;border:0;cursor:pointer;font-size:.95rem;transition:.25s;box-shadow:0 0 0 rgba(255,0,0,0)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,0,0,.4)}
 .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line);box-shadow:none}
 .icon-btn{background:none;border:1px solid var(--line);color:var(--text);border-radius:50%;width:38px;height:38px;cursor:pointer}
 .more{display:inline-block;margin-top:14px;color:var(--p);font-weight:600}
@@ -42,7 +42,7 @@ details p{color:var(--mute);margin:10px 0 0}
 .dd:hover .dm,.dd:focus-within .dm{display:block}
 .dm a{display:block;padding:9px 12px;border-radius:8px}
 .dm a:hover{background:var(--bg)}
-.links>a:not(.btn),.dd>a{padding-bottom:4px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q7.5 0 15 3T30 3T45 3T60 3' fill='none' stroke='%23E11D2E' stroke-width='1.6'/%3E%3C/svg%3E") left bottom/0 6px no-repeat;transition:background-size .35s,color .2s}
+.links>a:not(.btn),.dd>a{padding-bottom:4px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q7.5 0 15 3T30 3T45 3T60 3' fill='none' stroke='%23FF0000' stroke-width='1.6'/%3E%3C/svg%3E") left bottom/0 6px no-repeat;transition:background-size .35s,color .2s}
 .links>a:not(.btn):hover,.dd:hover>a{background-size:100% 6px;color:var(--text)}
 .btn::after{content:" →";display:inline-block;transition:transform .25s}
 .btn:hover::after{transform:translateX(5px)}
@@ -56,7 +56,7 @@ details p{color:var(--mute);margin:10px 0 0}
 @keyframes sp{to{transform:rotate(360deg)}}
 .menu{display:none}
 @media(max-width:820px){.menu{display:block}.links{display:none;position:absolute;left:0;right:0;top:68px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;padding:16px 20px;gap:14px}.links.open{display:flex}.dd{padding:0}.dm{display:block;position:static;border:0;box-shadow:none;background:none;padding:4px 0 0 12px;min-width:0}}
-.hero{position:relative;overflow:hidden;padding:110px 0 14px;background:radial-gradient(900px 400px at 80% -10%,rgba(225,29,46,.22),transparent 60%)}
+.hero{position:relative;overflow:hidden;padding:110px 0 14px;background:radial-gradient(900px 400px at 80% -10%,rgba(255,0,0,.22),transparent 60%)}
 #gl{position:absolute;inset:0;z-index:0;pointer-events:none}
 .hero .wrap{position:relative;z-index:1}
 .hero h1{font-family:"Instrument Serif",Georgia,serif;letter-spacing:-.01em;line-height:1.02;font-size:clamp(3rem,8vw,6.2rem);min-height:2.1em;transition:opacity .4s}
@@ -106,7 +106,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 </head>
 <body>
 <header><div class="wrap"><nav>
-<a href="#home" class="logo"><svg width="22" height="26" viewBox="0 0 22 26" aria-hidden="true"><path d="M11 0c1 5 8 8 8 15a8 8 0 0 1-16 0c0-3 2-5 3-7 1 2 2 3 3 3 0-4-1-7 2-11z" fill="#E11D2E"/></svg>FORGE <span>24</span></a>
+<a href="#home" class="logo"><svg width="22" height="26" viewBox="0 0 22 26" aria-hidden="true"><path d="M11 0c1 5 8 8 8 15a8 8 0 0 1-16 0c0-3 2-5 3-7 1 2 2 3 3 3 0-4-1-7 2-11z" fill="#FF0000"/></svg>FORGE <span>24</span></a>
 <button class="icon-btn menu" id="menu" aria-label="Menu" aria-expanded="false">☰</button>
 <div class="links" id="links"><a href="#home">Home</a><a href="#about">About</a>
 <div class="dd"><a href="#public-media-relations">Insights ▾</a><div class="dm"><a href="#public-media-relations">Public Media Relations</a></div></div>
@@ -235,19 +235,19 @@ try{var sv=localStorage.getItem("f24");if(sv)document.documentElement.dataset.th
 var PGS=["home","about","services","public-media-relations","contact"];
 function renderSvc(i){var s=S[i];$("svcpage").innerHTML='<div class="wrap"><div class="eyebrow">Service 0'+(i+1)+'</div><h2>'+s[0]+'</h2><p class="lead">'+s[1]+' Every engagement is tailored to your goals, audience and timeline.</p><div class="grid">'+D[i].map(function(d){return '<div class="card"><h3>'+d+'</h3><p>Planned, executed and measured by senior PR specialists.</p></div>'}).join("")+'</div><h2 style="margin-top:56px;font-size:2.2rem">Frequently asked</h2><div style="margin-top:16px">'+Q.map(function(q){return '<details><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>'}).join("")+'</div><p style="margin-top:28px"><a class="btn" href="#contact">Discuss this service</a></p></div>'}
 function route(){var h=(location.hash||"#home").slice(1),si=SL.indexOf(h),pg=si>-1?"service":(PGS.indexOf(h)>-1?h:"home");document.querySelectorAll("[data-pages]").forEach(function(e){e.style.display=e.dataset.pages.split(" ").indexOf(pg)>-1?"":"none"});if(si>-1)renderSvc(si);window.scrollTo({top:0,behavior:"instant"})}
-var RC=[["ON AIR 24/7","linear-gradient(150deg,#E11D2E,#9B0F1A)","#fff"],["BREAKING STORY","#15161c","#FF4D5A"],["PRESS KIT","linear-gradient(150deg,#FF4D5A,#E11D2E)","#fff"],["BRAND LAUNCH","linear-gradient(150deg,#2a2d38,#0E0F13)","#fff"],["TRUSTED VOICES","#F4F1EC","#0E0F13"],["GO LIVE","linear-gradient(150deg,#FF4D5A,#E11D2E)","#fff"]];
+var RC=[["ON AIR 24/7","linear-gradient(150deg,#FF0000,#FF0000)","#fff"],["BREAKING STORY","#15161c","#FF0000"],["PRESS KIT","linear-gradient(150deg,#FF0000,#FF0000)","#fff"],["BRAND LAUNCH","linear-gradient(150deg,#2a2d38,#0E0F13)","#fff"],["TRUSTED VOICES","#F4F1EC","#0E0F13"],["GO LIVE","linear-gradient(150deg,#FF0000,#FF0000)","#fff"]];
 $("rt").innerHTML=RC.concat(RC).map(function(c,i){var a=i*Math.PI/3;return '<div class="rc" style="background:'+c[1]+';color:'+c[2]+';transform:rotate('+(Math.sin(a)*8).toFixed(1)+'deg) translateY('+(Math.cos(a)*16).toFixed(0)+'px)">'+c[0]+'</div>'}).join("");
 (function(){var c=$("gl");if(!c||!window.THREE||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
 try{var T=THREE,r=new T.WebGLRenderer({alpha:true,antialias:true});r.setPixelRatio(Math.min(devicePixelRatio,2));c.appendChild(r.domElement);
 var sc=new T.Scene(),cam=new T.PerspectiveCamera(50,1,.1,100);cam.position.z=7;
 var cv=document.createElement("canvas");cv.width=1024;cv.height=128;var cx=cv.getContext("2d"),tx=new T.CanvasTexture(cv);
-function paint(){cx.fillStyle="#E11D2E";cx.fillRect(0,0,1024,128);cx.fillStyle="#0E0F13";cx.fillRect(0,0,1024,10);cx.fillRect(0,118,1024,10);cx.fillStyle="#fff";cx.font='86px "Bebas Neue",Impact,sans-serif';cx.textBaseline="middle";cx.fillText("FORGE 24  ///  FORGE 24  ///  ",10,68);tx.needsUpdate=true}
+function paint(){cx.fillStyle="#FF0000";cx.fillRect(0,0,1024,128);cx.fillStyle="#0E0F13";cx.fillRect(0,0,1024,10);cx.fillRect(0,118,1024,10);cx.fillStyle="#fff";cx.font='86px "Bebas Neue",Impact,sans-serif';cx.textBaseline="middle";cx.fillText("FORGE 24  ///  FORGE 24  ///  ",10,68);tx.needsUpdate=true}
 paint();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(paint);
 tx.wrapS=tx.wrapT=T.RepeatWrapping;tx.repeat.set(2,3);
 var k=new T.Mesh(new T.TorusKnotGeometry(1.5,.5,160,20),new T.MeshStandardMaterial({map:tx,metalness:.25,roughness:.35}));
-var ic=new T.Mesh(new T.IcosahedronGeometry(.7,1),new T.MeshBasicMaterial({color:0xFF4D5A,wireframe:true,transparent:true,opacity:.7}));
+var ic=new T.Mesh(new T.IcosahedronGeometry(.7,1),new T.MeshBasicMaterial({color:0xFF0000,wireframe:true,transparent:true,opacity:.7}));
 var g=new T.BufferGeometry(),n=220,a=new Float32Array(n*3);for(var i=0;i<n*3;i++)a[i]=(Math.random()-.5)*16;g.setAttribute("position",new T.BufferAttribute(a,3));
-var pts=new T.Points(g,new T.PointsMaterial({color:0xFF4D5A,size:.04}));sc.add(k,ic,pts);sc.add(new T.AmbientLight(0xffffff,.9));var dl=new T.DirectionalLight(0xffffff,1);dl.position.set(3,4,5);sc.add(dl);
+var pts=new T.Points(g,new T.PointsMaterial({color:0xFF0000,size:.04}));sc.add(k,ic,pts);sc.add(new T.AmbientLight(0xffffff,.9));var dl=new T.DirectionalLight(0xffffff,1);dl.position.set(3,4,5);sc.add(dl);
 var mx=0,my=0,t=0,lw=0,lh=0,kx=3,ky=0,ix=-3.4,iy=1.8;
 addEventListener("pointermove",function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
 function fit(){var w=c.clientWidth,h=c.clientHeight,wide=w>820;r.setSize(w,h);cam.aspect=w/h;cam.updateProjectionMatrix();kx=wide?3:0;ky=wide?0:-1.8;ix=wide?-3.4:2;iy=wide?1.8:2.6}
