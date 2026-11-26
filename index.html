@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Card photos: see README "Photo credits" -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -235,8 +236,8 @@ try{var sv=localStorage.getItem("f24");if(sv)document.documentElement.dataset.th
 var PGS=["home","about","services","public-media-relations","contact"];
 function renderSvc(i){var s=S[i];$("svcpage").innerHTML='<div class="wrap"><div class="eyebrow">Service 0'+(i+1)+'</div><h2>'+s[0]+'</h2><p class="lead">'+s[1]+' Every engagement is tailored to your goals, audience and timeline.</p><div class="grid">'+D[i].map(function(d){return '<div class="card"><h3>'+d+'</h3><p>Planned, executed and measured by senior PR specialists.</p></div>'}).join("")+'</div><h2 style="margin-top:56px;font-size:2.2rem">Frequently asked</h2><div style="margin-top:16px">'+Q.map(function(q){return '<details><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>'}).join("")+'</div><p style="margin-top:28px"><a class="btn" href="#contact">Discuss this service</a></p></div>'}
 function route(){var h=(location.hash||"#home").slice(1),si=SL.indexOf(h),pg=si>-1?"service":(PGS.indexOf(h)>-1?h:"home");document.querySelectorAll("[data-pages]").forEach(function(e){e.style.display=e.dataset.pages.split(" ").indexOf(pg)>-1?"":"none"});if(si>-1)renderSvc(si);window.scrollTo({top:0,behavior:"instant"})}
-var RC=[["ON AIR 24/7","linear-gradient(150deg,#EE1324,#EE1324)","#fff"],["BREAKING STORY","#15161c","#EE1324"],["PRESS KIT","linear-gradient(150deg,#EE1324,#EE1324)","#fff"],["BRAND LAUNCH","linear-gradient(150deg,#2a2d38,#0C1014)","#fff"],["TRUSTED VOICES","#F4F1EC","#0C1014"],["GO LIVE","linear-gradient(150deg,#EE1324,#EE1324)","#fff"]];
-$("rt").innerHTML=RC.concat(RC).map(function(c,i){var a=i*Math.PI/3;return '<div class="rc" style="background:'+c[1]+';color:'+c[2]+';transform:rotate('+(Math.sin(a)*8).toFixed(1)+'deg) translateY('+(Math.cos(a)*16).toFixed(0)+'px)">'+c[0]+'</div>'}).join("");
+var RC=[["ON AIR 24/7","#EE1324","#fff","on-air"],["BREAKING STORY","#15161c","#EE1324","breaking-story"],["PRESS KIT","#EE1324","#fff","press-kit"],["BRAND LAUNCH","#1d2029","#fff","brand-launch"],["TRUSTED VOICES","#F4F1EC","#0C1014","trusted-voices"],["GO LIVE","#EE1324","#fff","go-live"]];
+$("rt").innerHTML=RC.concat(RC).map(function(c,i){var a=i*Math.PI/3;return '<div class="rc" style="background:linear-gradient(to top,'+c[1]+' 26%,'+c[1]+'00 68%),url(assets/cards/'+c[3]+'.jpg) center/cover,'+c[1]+';color:'+c[2]+';transform:rotate('+(Math.sin(a)*8).toFixed(1)+'deg) translateY('+(Math.cos(a)*16).toFixed(0)+'px)">'+c[0]+'</div>'}).join("");
 (function(){var c=$("gl");if(!c||!window.THREE||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
 try{var T=THREE,r=new T.WebGLRenderer({alpha:true,antialias:true});r.setPixelRatio(Math.min(devicePixelRatio,2));c.appendChild(r.domElement);
 var sc=new T.Scene(),cam=new T.PerspectiveCamera(50,1,.1,100);cam.position.z=7;
