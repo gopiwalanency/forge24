@@ -50,8 +50,14 @@ details p{color:var(--mute);margin:10px 0 0}
 .reel{position:relative;z-index:1;margin-top:40px;overflow:hidden;padding:24px 0 8px}
 .reel:hover .rt{animation-play-state:paused}
 .rt{display:flex;gap:22px;width:max-content;animation:m 45s linear infinite}
-.rc{width:170px;height:224px;border-radius:18px;flex:none;padding:16px;display:flex;align-items:flex-end;font-family:"Bebas Neue",sans-serif;font-size:2.1rem;line-height:.95;box-shadow:0 14px 34px rgba(0,0,0,.35);transition:transform .3s}
-.rc:hover{transform:scale(1.07) rotate(0) !important}
+.rc{position:relative;width:240px;height:320px;border-radius:20px;overflow:hidden;flex:none;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.rc img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.rc::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(12,16,20,.95) 8%,rgba(12,16,20,0) 60%)}
+.rc:hover img{transform:scale(1.08)}
+.rc .tag{position:absolute;top:14px;left:14px;z-index:2;background:var(--p);color:#fff;font-size:.7rem;font-weight:600;letter-spacing:.14em;padding:5px 10px;border-radius:999px}
+.rc .tag::before{content:"\25CF  "}
+.rc h3{position:absolute;text-align:left;left:18px;right:18px;bottom:16px;z-index:2;margin:0;color:#fff;font-size:2.2rem;line-height:.95}
+.rc h3 span{display:block;width:36px;height:4px;background:var(--p);margin-bottom:10px;border-radius:2px}
 .badge{position:relative;z-index:2;color:var(--text);display:flex;justify-content:center;align-items:center;margin:0 auto;width:100%;padding:0}.badge svg{width:64px;height:64px;display:block;margin:0 auto}section.hero{text-align:center}section.hero p{margin:20px auto 30px}section.hero .cta{justify-content:center}
 .spin{transform-origin:60px 60px;animation:sp 18s linear infinite}
 @keyframes sp{to{transform:rotate(360deg)}}
@@ -236,8 +242,8 @@ try{var sv=localStorage.getItem("f24");if(sv)document.documentElement.dataset.th
 var PGS=["home","about","services","public-media-relations","contact"];
 function renderSvc(i){var s=S[i];$("svcpage").innerHTML='<div class="wrap"><div class="eyebrow">Service 0'+(i+1)+'</div><h2>'+s[0]+'</h2><p class="lead">'+s[1]+' Every engagement is tailored to your goals, audience and timeline.</p><div class="grid">'+D[i].map(function(d){return '<div class="card"><h3>'+d+'</h3><p>Planned, executed and measured by senior PR specialists.</p></div>'}).join("")+'</div><h2 style="margin-top:56px;font-size:2.2rem">Frequently asked</h2><div style="margin-top:16px">'+Q.map(function(q){return '<details><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>'}).join("")+'</div><p style="margin-top:28px"><a class="btn" href="#contact">Discuss this service</a></p></div>'}
 function route(){var h=(location.hash||"#home").slice(1),si=SL.indexOf(h),pg=si>-1?"service":(PGS.indexOf(h)>-1?h:"home");document.querySelectorAll("[data-pages]").forEach(function(e){e.style.display=e.dataset.pages.split(" ").indexOf(pg)>-1?"":"none"});if(si>-1)renderSvc(si);window.scrollTo({top:0,behavior:"instant"})}
-var RC=[["ON AIR 24/7","#EE1324","#fff","on-air"],["BREAKING STORY","#15161c","#EE1324","breaking-story"],["PRESS KIT","#EE1324","#fff","press-kit"],["BRAND LAUNCH","#1d2029","#fff","brand-launch"],["TRUSTED VOICES","#F4F1EC","#0C1014","trusted-voices"],["GO LIVE","#EE1324","#fff","go-live"]];
-$("rt").innerHTML=RC.concat(RC).map(function(c,i){var a=i*Math.PI/3;return '<div class="rc" style="background:linear-gradient(to top,'+c[1]+' 26%,'+c[1]+'00 68%),url(assets/cards/'+c[3]+'.jpg) center/cover,'+c[1]+';color:'+c[2]+';transform:rotate('+(Math.sin(a)*8).toFixed(1)+'deg) translateY('+(Math.cos(a)*16).toFixed(0)+'px)">'+c[0]+'</div>'}).join("");
+var RC=[["ON AIR 24/7","on-air","ALWAYS ON"],["BREAKING STORY","breaking-story","NEWS"],["PRESS KIT","press-kit","MEDIA"],["BRAND LAUNCH","brand-launch","LAUNCH"],["TRUSTED VOICES","trusted-voices","TRUST"],["GO LIVE","go-live","LIVE"]];
+$("rt").innerHTML=RC.concat(RC).map(function(c){return '<div class="rc"><img src="assets/cards/'+c[1]+'.jpg" alt="" loading="lazy"><span class="tag">'+c[2]+'</span><h3><span></span>'+c[0]+'</h3></div>'}).join("");
 (function(){var c=$("gl");if(!c||!window.THREE||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
 try{var T=THREE,r=new T.WebGLRenderer({alpha:true,antialias:true});r.setPixelRatio(Math.min(devicePixelRatio,2));c.appendChild(r.domElement);
 var sc=new T.Scene(),cam=new T.PerspectiveCamera(50,1,.1,100);cam.position.z=7;
